@@ -15,4 +15,6 @@
   - Cons:
     - It is pretty complicated to implement efficiently, but luckily there are open source byte-pair tokenizers
 3. `03-1-sliding-window.py` -> In this file, I implement a very basic sliding window input-expected output generator, which is usually the way an LLM is trained, by predicting the next word.
-
+  - There can be 2 approaches, the ones with, and without chunks
+    - Without chunks, you simply take a *context_size* element subsequence from the array and use it as input, then take the element after them, and use it as the expected output.
+    - With chuncks, you take a *context_size* length subsequence from the array, then take another *context_size* length subsequence shifted by one. Then you do *context size* predictions on these. This will make it more efficient on the gpu, and also make the model capable of making predictions from different sized inputs.
