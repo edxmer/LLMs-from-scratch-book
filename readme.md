@@ -1,6 +1,8 @@
 
-# files:
+## Files:
 *The data for training is the short story "The Verdict" by Edith Wharton*
+
+
 1. `01-own-tokenizer-test.py` -> Making a tokenizer by simply using the words and symbols in the training data
   - Pros:
     - Simple, and easy to implement
