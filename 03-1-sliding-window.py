@@ -44,7 +44,7 @@ for i in range(len(enc_sample) - context_size):
     print("\n")
 
 """
-The advantage of the chunk approach is that every chunk basically contains 4 training samples
+The advantage of the chunk approach is that every chunk basically contains context_size training samples
 
 For example:
 
