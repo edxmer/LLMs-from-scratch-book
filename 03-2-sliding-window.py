@@ -15,4 +15,16 @@ class GPTDatasetV1(Dataset):
 
         token_ids = tokenizer.encode(text)
 
-        for i in range()
+        for i in range(0, len(token_ids)-max_length, stride):
+            input_chunk = token_ids[i:i+max_length]
+            output_chunk = token_ids[i+1:i+max_length+1]
+            self.input_ids.append(torch.tensor(input_chunk))
+            self.output_chunk.append(torch.tensor(output_chunk))
+
+    def __len__(self):
+        return len(self.input_ids)
+
+    def __getitem__(self, index):
+        return self.input_ids[index], self.target_ids[index]
+
+
